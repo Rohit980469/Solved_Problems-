@@ -9,8 +9,9 @@ class Solution:
         def isbst(node, low , high):
             if node is None :
                 return True
-            if not (low < node.val < high):
+            if (low < node.val < high):
+                return isbst(node.left , low , node.val) and isbst(node.right , node.val , high)
+            else:
                 return False
-            return isbst(node.left , low , node.val) and isbst(node.right , node.val , high)
 
         return isbst(root,float('-inf') , float('inf'))
