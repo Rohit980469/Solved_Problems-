@@ -24,10 +24,13 @@ class Solution:
             fast = fast.next.next
         
         Root = TreeNode(slow.val)
-        new_head = slow.next
-        slow.next = None
-        prev.next = None
-        Root.left = self.sortedListToBST(head) if prev else None
-        Root.right = self.sortedListToBST(new_head)
+        
+        if prev :
+            prev.next = None
+            Root.left = self.sortedListToBST(head)
+        else:
+            Root.left = None
+        
+        Root.right = self.sortedListToBST(slow.next)
 
         return Root
