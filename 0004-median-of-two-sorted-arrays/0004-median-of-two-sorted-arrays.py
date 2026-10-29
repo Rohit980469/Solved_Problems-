@@ -3,7 +3,7 @@ class Solution:
         mer_arr = sorted(nums1 + nums2)
         
         x = len(mer_arr)
-        if x % 2 == 1:
+        if x % 2 :
             return float(mer_arr[x // 2])
-        else:
-            return (mer_arr[x // 2] + mer_arr[x // 2 -1]) / 2.0
+
+        return (mer_arr[x // 2] + mer_arr[x // 2 -1]) / 2.0
