@@ -8,11 +8,9 @@ class Solution:
                     rows.add(i)
                     cols.add(j)
 
-        for i in range(len(matrix)):
-            if i in rows:
-                matrix[i] = [0] * len(matrix[i])
+        for i in rows:
+            matrix[i] = [0] * len(matrix[i])
         
-        for i in range(len(matrix)):
-            for j in range(len(matrix[i])):
-                if j in cols:
-                    matrix[i][j] = 0
+        for i in cols:
+            for j in range(len(matrix)):
+                matrix[j][i] = 0
